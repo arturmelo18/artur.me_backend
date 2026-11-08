@@ -3,11 +3,11 @@ import { SpotifyConnector } from "./connectors/spotifyConnector";
 
 const spotifyConnector = new SpotifyConnector()
 
-const getCurrentSoundtrack = async () => await spotifyConnector.getCurrentlyPlayingTrack()
+const currentlyPlayingTrack = async () => await spotifyConnector.getCurrentlyPlayingTrack()
 
 const app = new Elysia()
 .get("/", () => "Hello Elysia")
-.get("/currentMusic", getCurrentSoundtrack)
+.get("/currentlyPlayingTrack", currentlyPlayingTrack)
 .listen(3000);
 
 console.log(
